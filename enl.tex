@@ -38,6 +38,7 @@ Para tres variables:
     \end{pmatrix}+ \begin{pmatrix} \frac{b_1}{a_{11}} \\ \frac{b_2}{a_{22}} \\ \frac{b_3}{a_{33}}
     \end{pmatrix}
 \end{equation}
+\newpage
 \subsection{Método de Gauss-Seidel}
 El método de Gauss-Seidel converge más rápido que el método de Jacobi, pues tiene en cuenta las aproximaciones que se van haciendo en esa misma iteración con las priemras variables para aproximar las siguientes.
 Aclaración: $i$ es el número de iteración.
@@ -56,3 +57,14 @@ Despejando para $x_1$, $x_2$, $x_3$:
 La forma iterativa de Gauss Seidel es:
 $\vec(x)=T+\vec{b}$ \\
 \subsection{Criterios de convergencia}
+Sea $\lambda$ un autovalor de $T$.
+\begin{itemize}
+\item Si $max(\lambda)<1 \implies $ va a converger.\\
+Para obtener $\lambda$ se usa la ecuación $\det(\ T-\lambda\ .\ I)=0$
+\item Si $A$ es diagonal dominante, va a converger. En caso de no serlo, no se puede concluir nada.\\
+Una matriz $A$ es dominante si $\forall\ i,\ |a_{ii}|>\sum_{1}^{n}|a_{ij}|,\ i\ne j,\ i,\ j \in \mathbb{N}$.\\
+Es decir, el elemento de la diagonal es mayor a la suma de todos los demás elementos de la fila.
+\item Si $||T||_\infty<1 \implies$ va a converger. En caso de no serlo, no se puede concluir nada.
+La norma de $T$ infinito es $\max\limits_{1 \leq i \leq n}\left(\sum_{1}^{n}|t_{ij}|\right),\ i,\ j \in \mathbb{N}$.\\
+Es decir, la mayor suma de valores absolutos de todos los elementos de una fila.
+\end{itemize}

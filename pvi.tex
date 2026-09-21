@@ -1,0 +1,28 @@
+\section{PVI (Problemas de Valor Inicial)}
+Problemas de ecuaciones diferenciales en los que la variable independiente es el tiempo.
+Las distintas aproximaciones no son soluciones más cercanas a la buscada, que reducen el error con iteraciones, sino que son soluciones correspondientes a avances temporales de paso h.
+\subsection{Método Euler}
+\begin{itemize}
+    \item Error local de Euler es $O(h^2)$
+    \item Error global $\approx O(h)$
+    \item El método Euler tiene orden de precisión 1.
+\end{itemize}
+Forma recursiva: $u_{n+1}=u_n+h\ f(u_n,t_n)$
+\subsection{Método de punto medio}
+Avanzar con la pendiente evaluada en el punto medio del intervalo.\\
+\underline{Forma recursiva}\\
+\begin{enumerate}
+\item $u_{n+\frac{1}{2}}=u_n+h\ f(u_n,t_n)$ Primer iteración por Euler para obetner $u_n+\frac{1}{2}$.
+\item $u_{n+1}=u_n+h\ f(u_{n+\frac{1}{2}},t_{n+\frac{1}{2}})$
+\end{enumerate}
+\subsection{Método de Runge-Kutta}
+El método Runge-Kutta es de orden 2.
+\begin{enumerate}
+    \item $q_1=h\ f(u_n,t_n)$ Toma la pendiente al inicio del intervalo.
+    \item $q_1=h\ f(u_{n+q_1},t_{n+q_1})$ Toma la pendiente al final del intervalo.
+    \item $u_{n+1}=u_n+(\frac{q_1+q_2}{2})$ Avanzar con el promedio de las pendientes
+\end{enumerate}
+\subsection{Método de Euler Implícito}
+El método Runge-Kutta es de orden 1.
+$u_{n+1}=u_n+h\ f(u_{n+1}, t_{n+1})$
+
