@@ -1,0 +1,26 @@
+# Fdb version 4
+["pdflatex"] 1789950985.78427 "/home/lucas/fiuba/modelacionNumerica/main.tex" "main.pdf" "main" 1789950985.95777 2
+  "/home/lucas/fiuba/modelacionNumerica/main.tex" 1789950985.22333 109 7c8cd2689db0e6c27cea7c592b39c62e ""
+  "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1654720880 2222 78b930a5a6e3dc2ac69b78c2057b94d7 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty" 1654720880 4173 c989ee3ced31418e3593916ab26c793a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty" 1654720880 88393 1adf6fa3f245270d06e3d4f8910f7fc5 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty" 1654720880 4474 f04cd1cc7bd76eb033e6fb12eb6a0d77 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty" 1654720880 2444 70065bddd85997dc1fd0bb7ae634e5fa ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1775001600 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1775001600 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1673989714 30429 213676d4c7327a21d91ddaed900e7b81 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1775001600 40900 887e0dc8cac988a9e9c574af364cf837 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1789934552 7753793 9178fd6a338d79c4b67129cb79be1fc9 ""
+  "enl.tex" 0 -1 0 ""
+  "main.aux" 1789950985.92767 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "main.tex" 1789950985.22333 109 7c8cd2689db0e6c27cea7c592b39c62e ""
+  "senl.tex" 1789950951.86081 1691 2775cd7806460ed6b34678bb851a843d ""
+  (generated)
+  "main.aux"
+  "main.log"
+  "main.pdf"
+  (rewritten before read)

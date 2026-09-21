@@ -1,0 +1,36 @@
+\section{SENL (Sistemas de Ecuaciones no Lineales)}
+\subsection{Newton-Raphson}
+El método consigue una de las raíces del sistema de ecuaciones, habría que iterarlo varias veces para obtener todas.
+El Jacobiano tiene que ser evaluado en un punto.
+Fórmula iterativa desarrollada:
+\begin{equation}
+\begin{pmatrix}
+    x_{k+1}\\y_{k+1}
+\end{pmatrix}=\begin{pmatrix}
+    x_k\\y_k
+\end{pmatrix}-\begin{pmatrix}
+  \frac{\partial f_1(x_k,y_k)}{\partial x_k} & \frac{\partial f_1(x_k,y_k)}{\partial y_k} \\ 
+  \frac{\partial f_2(x_k,y_k)}{\partial x_k} & \frac{\partial f_2(x_k,y_k)}{\partial y_k} 
+\end{pmatrix}^{-1}\times \begin{pmatrix}
+    f_1(x_k,y_k)\\f_2(x_k,y_k)
+\end{pmatrix}
+\end{equation}
+\begin{equation}
+\vec{x}_{k+1}=\vec{x}_k-\vec{J}(\vec{x}_k)^{-1}\times\vec{F}(\vec{x}_k)
+\end{equation}
+
+\subsection{Método Punto Fijo}
+El método de punto fijo es igual que el método de Newton Raphson, la diferencia está en el jacobiano. En el método de punto fijo se elije una matriz $A$ a conveniencia.
+Se puede tomar la matriz jacobiana y mantener la matriz evaluada en la semilla para todas las iteraciones, para no tener que inventar una y chequear convergencia.
+\begin{equation}
+\vec{x}_{k+1}=\vec{x}_k-\vec{J}(\vec{x}_k)^{-1}\times\vec{F}(\vec{x}_k)
+\end{equation}
+
+\subsection{Cálculo de inversa de una matriz}
+$A^{-1}=\frac1{\det(A)}\times \text{Adj}(A)$
+
+$\text{Adj}(A)=\text{Cof}(A)^T$
+
+$C_{ij}=(-1)^{i+j} \times \det(\text{de la matriz que queda al eliminar la fila $i$ y la col $j$})$
+La matriz de cofactores es del mismo tamaño que $A$ y cada elemento es el cofactor $ij$.
+Si es un solo elemento el que queda, va ese elem directamente como determinante de la matriz sobrante.
