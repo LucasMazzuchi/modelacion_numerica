@@ -1,0 +1,58 @@
+\section{SEL (Sistemas de Ecuaciones Lineales)}
+
+\subsection{Método de Jacobi}
+El método de Jacobi tiene menor costo computacional que triangular o invertir una matriz, y busca resolver sistemas del tipo $A\vec{x}=\vec{b}$.
+
+$$\vec{b}=\begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix}, \quad \vec{x}=\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}$$
+
+Para cada componente $i$, el esquema iterativo se define como:
+Notar que las potencias $k$ y $k+1$ son simplemente notación para mostrar la iteración en la que estamos.
+\begin{equation}
+    x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j \neq i} a_{ij} x_j^{(k)} \right)
+\end{equation}
+La forma iterativa de Jacobi es:
+$\vec(x)=T+\vec{b}$ \\
+Despejando para $x_1$, $x_2$, $x_3$:
+\begin{equation}
+    \begin{cases}
+        x_1^{(k+1)} = \frac{1}{a_{11}} \left( b_1 - a_{12}x_2^{(k)} - a_{13}x_3^{(k)} \right)\\
+        x_2^{(k+1)} = \frac{1}{a_{22}} \left( b_2 - a_{21}x_1^{(k)} - a_{23}x_3^{(k)} \right)\\
+        x_3^{(k+1)} = \frac{1}{a_{33}} \left( b_3 - a_{31}x_1^{(k)} - a_{32}x_2^{(k)} \right)\\
+    \end{cases}
+\end{equation}\\
+Sea $T$ la matriz de iteración para Gauss-Seidel
+\begin{equation}
+    T=\begin{pmatrix}
+        0 & \frac{a_{12}}{a_{11}} & \frac{a_{13}}{a_{11}} \\
+        \frac{a_{21}}{a_{22}} & 0 & \frac{a_{23}}{a_{22}} \\
+        \frac{a_{31}}{a_{33}} & \frac{a_{32}}{a_{33}} & 0
+    \end{pmatrix}
+\end{equation}\\
+Para tres variables:
+\begin{equation}
+    \begin{pmatrix}x_1 \\x_2 \\ x_3
+    \end{pmatrix}=\begin{pmatrix}
+        0 & \frac{a_{12}}{a_{11}} & \frac{a_{13}}{a_{11}} \\
+        \frac{a_{21}}{a_{22}} & 0 & \frac{a_{23}}{a_{22}} \\
+        \frac{a_{31}}{a_{33}} & \frac{a_{32}}{a_{33}} & 0
+    \end{pmatrix}+ \begin{pmatrix} \frac{b_1}{a_{11}} \\ \frac{b_2}{a_{22}} \\ \frac{b_3}{a_{33}}
+    \end{pmatrix}
+\end{equation}
+\subsection{Método de Gauss-Seidel}
+El método de Gauss-Seidel converge más rápido que el método de Jacobi, pues tiene en cuenta las aproximaciones que se van haciendo en esa misma iteración con las priemras variables para aproximar las siguientes.
+Aclaración: $i$ es el número de iteración.
+\begin{equation}
+    x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1}^{i-1} a_{ij} x_j^{(k+1)} - \sum_{j=i+1}^{n} a_{ij} x_j^{(k)} \right)
+\end{equation}
+
+Despejando para $x_1$, $x_2$, $x_3$:
+\begin{equation}
+    \begin{cases}
+        x_1^{(k+1)} = \frac{1}{a_{11}} \left( b_1 - a_{12}x_2^{(k)} - a_{13}x_3^{(k)} \right)\\
+        x_2^{(k+1)} = \frac{1}{a_{22}} \left( b_2 - a_{21}x_1^{(k+1)} - a_{23}x_3^{(k)} \right)\\
+        x_3^{(k+1)} = \frac{1}{a_{33}} \left( b_3 - a_{31}x_1^{(k+1)} - a_{32}x_2^{(k+1)} \right)\\
+    \end{cases}
+\end{equation}
+La forma iterativa de Gauss Seidel es:
+$\vec(x)=T+\vec{b}$ \\
+\subsection{Criterios de convergencia}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.9.20)  20 SEP 2026 21:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.9.20)  21 SEP 2026 12:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -107,28 +107,27 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
- (./senl.tex)
+ (./senl.tex) [1
 
-! LaTeX Error: File `enl.tex' not found.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./enl.tex [2]
+Underfull \hbox (badness 10000) in paragraph at lines 55--58
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
+ []
 
-Enter file name: 
-/home/lucas/fiuba/modelacionNumerica/main.tex:5: Emergency stop.
-<read *> 
-         
-l.5 \input{enl.tex}
-                   ^^M
-*** (cannot \read from terminal in nonstop modes)
-
- 
+) [3] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 1164 strings out of 476041
- 17975 string characters out of 5793174
- 1854388 words of memory out of 6000000
- 21679 multiletter control sequences out of 15000+600000
+ 1171 strings out of 476041
+ 18035 string characters out of 5793174
+ 1868388 words of memory out of 6000000
+ 21680 multiletter control sequences out of 15000+600000
  513951 words of font info for 38 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 56i,7n,62p,256b,123s stack positions out of 10000i,1000n,20000p,200000b,200000s
-/home/lucas/fiuba/modelacionNumerica/main.tex:5:  ==> Fatal error occurred, no output PDF file produced!
+ 56i,8n,62p,299b,132s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on main.pdf (3 pages, 117445 bytes).
+PDF statistics:
+ 64 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
