@@ -13,7 +13,7 @@ Forma recursiva: $u_{n+1}=u_n+h\ f(u_n,t_n)$
 Avanzar con la pendiente evaluada en el punto medio del intervalo.\\
 \underline{Forma recursiva}\\
 \begin{enumerate}
-\item $u_{n+\frac{1}{2}}=u_n+h\ f(u_n,t_n)$ Primer iteración por Euler para obetner $u_n+\frac{1}{2}$.
+\item $u_{n+\frac{1}{2}}=u_n+h\ f(u_n,t_n)$ Primer iteración por Euler para obtener $u_n+\frac{1}{2}$.
 \item $u_{n+1}=u_n+h\ f(u_{n+\frac{1}{2}},t_{n+\frac{1}{2}})$
 \end{enumerate}
 \subsection{Método de Runge-Kutta}
@@ -24,8 +24,8 @@ El método Runge-Kutta es de orden 2.
     \item $u_{n+1}=u_n+(\frac{q_1+q_2}{2})$ Avanzar con el promedio de las pendientes
 \end{enumerate}
 \subsection{Método de Euler Implícito}
-El método de Euler Implícito es de orden 1.
-$u_{n+1}=u_n+h\ f(u_{n+1}, t_{n+1})$
+El método de Euler Implícito es de orden 1.\\
+$u_{n+1}=u_n+h\ f(u_{n+1}, t_{n+1})$\\
 En cada iteración se tiene que conseguir a $u_{n+1}$ de alguna forma, ej:Newton-Raphson para conseguir $u_{n+1}$.
 Además, Euler Implícito es el único método incondicionalmente estable para cualquier ecuación diferencial.
 
