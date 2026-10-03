@@ -17,6 +17,8 @@ Avanzar con la pendiente evaluada en el punto medio del intervalo.\\
 \end{enumerate}
 \subsection{Método de Runge-Kutta}
 El método Runge-Kutta es de orden 2.
+Tener en cuenta que las sumas de los q son respecto a las variables, es decir, para un sistema, se suma
+el $q_i$ correspondiente a la variable. Además, $f$ tiene que depender de lo que depende realmente.
 \begin{enumerate}
     \item $q_1=h\ f(u_n,t_n)$ Toma la pendiente al inicio del intervalo.
     \item $q_1=h\ f(u_{n+q_1},t_{n+q_1})$ Toma la pendiente al final del intervalo.
