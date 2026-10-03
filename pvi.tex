@@ -1,7 +1,8 @@
 \section{PVI (Problemas de Valor Inicial)}
 Problemas de ecuaciones diferenciales en los que la variable independiente es el tiempo.
 Las distintas aproximaciones no son soluciones más cercanas a la buscada, que reducen el error con iteraciones, sino que son soluciones correspondientes a avances temporales de paso h.
-\subsection{Método Euler}
+\subsection{Método Euler (explícito)}
+El método Runge-Kutta de orden 1 es lo mismo que el método de Euler explícito.
 \begin{itemize}
     \item Error local de Euler es $O(h^2)$
     \item Error global $\approx O(h)$
@@ -12,7 +13,7 @@ Forma recursiva: $u_{n+1}=u_n+h\ f(u_n,t_n)$
 Avanzar con la pendiente evaluada en el punto medio del intervalo.\\
 \underline{Forma recursiva}\\
 \begin{enumerate}
-\item $u_{n+\frac{1}{2}}=u_n+h\ f(u_n,t_n)$ Primer iteración por Euler para obetner $u_n+\frac{1}{2}$.
+\item $u_{n+\frac{1}{2}}=u_n+h\ f(u_n,t_n)$ Primer iteración por Euler para obtener $u_n+\frac{1}{2}$.
 \item $u_{n+1}=u_n+h\ f(u_{n+\frac{1}{2}},t_{n+\frac{1}{2}})$
 \end{enumerate}
 \subsection{Método de Runge-Kutta}
@@ -25,6 +26,59 @@ el $q_i$ correspondiente a la variable. Además, $f$ tiene que depender de lo qu
     \item $u_{n+1}=u_n+(\frac{q_1+q_2}{2})$ Avanzar con el promedio de las pendientes
 \end{enumerate}
 \subsection{Método de Euler Implícito}
-El método Runge-Kutta es de orden 1.
-$u_{n+1}=u_n+h\ f(u_{n+1}, t_{n+1})$
+El método de Euler Implícito es de orden 1.\\
+$u_{n+1}=u_n+h\ f(u_{n+1}, t_{n+1})$\\
+En cada iteración se tiene que conseguir a $u_{n+1}$ de alguna forma, ej:Newton-Raphson para conseguir $u_{n+1}$.
+Además, Euler Implícito es el único método incondicionalmente estable para cualquier ecuación diferencial.
 
+Error Local ($\delta_n$): Es la perturbación nueva que se introduce exclusivamente en el paso actual.
+
+
+Error Global o Acumulado ($\epsilon_n$ o $e_n$): Es la diferencia total entre la solución numérica y la solución analítica exacta en el paso $n$. Es la suma histórica de todos los errores propagados.
+\begin{equation}
+    \frac{\epsilon_{n+1}}{\epsilon_n}<1
+\end{equation}
+
+\subsection{Método Runge-Kutta orden 4}
+\begin{equation}
+    \begin{cases}
+        q_1=h\ f(u_n, t_n) \\
+        q_2=h\ f(u_n+\frac{1}{2}\ q_2, t_{n+\frac{1}{2}}) \\
+        q_3=h\ f(u_n+\frac{1}{2}q_2, t_{n+\frac{1}{2}}) \\
+        q_4=h\ f(u_n+q_3, t_{n+1})
+    \end{cases}
+u_{n+1}=u_n+\frac{1}{6}(q_1+2\ q_2+2\ q_3+q_4)
+\end{equation}
+Es el $u_n$ sumado a un promedio de los $4 q$ con los dos del medio pesando más.
+Se vuelve inestable en $h = 2,797$ (tau)
+
+\subsection{Extensión a orden de derivada mayor a 1}
+Ej: $y''+y=0$
+Condiciones sobre la ecuación
+
+\begin{equation}
+    \begin{cases}
+        y(0)=1\\
+        y'(0)=2
+    \end{cases}
+\end{equation}
+    Solución analítica  Solución numérica
+
+    $y(t)\quad \implies \quad u_n(t_n)$
+
+    $y'(t)\quad \implies \quad u_n'(t_n)\ \implies v_n(t_n)$
+
+    $y''(t)\quad \implies \quad u_n''(t_n)\ \implies v'_n(t_n)$\\
+$y'' = -y$\\ Despeje de la ecuación de ejemplo.
+$y' = u' = v$\\
+$y'' = u'' = v'$\\
+$u'=v$\\
+$v'=y''=-y=u\implies\ \begin{cases} u'=v\\ v' = -u\end{cases}$
+Se transformó una ecuación diferencial de orden 2 en un sistema de
+ecuaciones diferenciales de orden 1
+
+Aplicando Euler explícito:
+$u_{n+1}=u_n+h\ v_n$
+$v_{n+1}=v_n+h\ [-u_n]$
+
+\subsection{Método de las perturbaciones: $\epsilon << u$, $\delta << v$}
