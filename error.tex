@@ -1,0 +1,46 @@
+\section{Errores en el cálculo numérico}
+Se utiliza para:
+\begin{itemize}
+    \item Saber que tan confiable es un rdo
+    \item detectar mal condicionamiento
+    \item garantizar una tolerancia aceptable
+\end{itemize}
+
+\subsection{Fuentes de Error}
+\subsubsection{Error inherente}
+Errores por cálculos previos, mediciones físicas, simplificaciones del modelo matemático.
+Ej: $\theta''\ +\ g\ sen\left(\theta\right)\ = \ 0\ \implies\ \theta''\ +\ g\ \boldsymbol{\theta}\ =\ 0$
+Esto es solo válido para theta acercandose a cero.
+\subsubsection{Error de redondeo}
+Por representación finita de un número en una computadora, se redondea y se pierde exactitud.
+\subsubsection{Error de truncamiento o discretización}
+Corte de procesos iterativos o sumatorias infinitas convergentes, el conocido hasta ahora.
+Se da al particionar dominios continuos.
+\subsection{Error absoluto y relativo}
+Error absoluto: $\epsilon_a=a\tilde{~}-a$
+
+
+Error relativo: $\epsilon_r=\frac{e_a}{a}$
+
+
+Como generalmente no se conoce 'a', se trabaja con cotas de errores.
+
+
+$\Delta\ a$: Cota de error absoluto. $|\epsilon_a|\le\Delta\ a$
+
+
+$\frac{\Delta\ a}{a\tilde{~}}$ Cota de error relativo. $|\epsilon_r|\le \frac{\Delta\ a}{a\tilde{~}}$
+
+El resultado junto a su error se expresan de la forma:
+$a = a\tilde{~}+\Delta\ a$
+
+\subsubsection{¿Cómo seleccionar $\Delta\ a$?}
+Un criterio:
+\begin{itemize}
+    \item Se obtiene un dígito para $\Delta\ a$.
+    \item Se ubica el dígito en el $a\tilde{~}$ afectado por la cota.
+    \item Los dígitos que están a la derecha se desechan, pues no tiene sentido mantener la exactitud sobre dígitos de los que no estoy seguro que sean así.
+    \item Se redondea de forma simétrica al más próximo.
+\end{itemize}
+El error relativo es la suma de los errores de las variables.
+Los errores se propagan al realizar operaciones.
