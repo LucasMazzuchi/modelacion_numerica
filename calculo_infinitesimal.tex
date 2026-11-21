@@ -1,0 +1,33 @@
+\section{Calculo infinitesimal}
+\subsection{Fórmulas con precisión de Orden 1: $\mathcal{O}(h)$}
+El error de truncamiento depende linealmente del tamaño del paso $h$. 
+
+\subsubsection{Operador en adelanto (Derivada primera)}
+Utiliza el punto actual y el siguiente. Es la aproximación más básica.
+\begin{equation}
+    f'(x_0) = \frac{f(x_0+h) - f(x_0)}{h} - \underbrace{\frac{h}{2} \cdot f''(x_0)}_{\mathcal{O}(h)}
+\end{equation}
+\subsubsection{Operador en atraso (Derivada primera)}
+
+$$f'(x_0) = \frac{f(x_0) - f(x_0-h)}{h} + \underbrace{\frac{h}{2} f''(x_0)}_{\mathcal{O}(h)}$$
+
+\subsection{Fórmulas con precisión de Orden 2: $\mathcal{O}(h^2)$}
+El error de truncamiento está elevado al cuadrado, por lo que si el paso $h$ se reduce a la mitad, el error se divide por cuatro.
+
+\subsubsection{Operador de diferencias centrales (Derivada primera)}
+Utiliza un punto hacia adelante y uno hacia atrás.
+\begin{equation}
+    f'(x_0) = \frac{f(x_0+h) - f(x_0-h)}{2h} - \underbrace{\frac{h^2}{3!} f'''(x_0)}_{\mathcal{O}(h^2)}
+\end{equation}
+
+\subsubsection{Operador de diferencias centrales (Derivada segunda)}
+Utiliza el punto actual y sus dos vecinos inmediatos.
+\begin{equation}
+    f''(x_0) = \frac{f(x_0+h) - 2f(x_0) + f(x_0-h)}{h^2} - \underbrace{\frac{h^2}{12} f^{(4)}(x_0)}_{\mathcal{O}(h^2)}
+\end{equation}
+
+\subsubsection{Operador en adelanto de 3 puntos (Derivada primera)}
+Ideal para calcular la derivada en el límite inferior de una tabla de datos donde no existen puntos previos (no se puede usar la central), manteniendo una alta precisión.
+\begin{equation}
+    f'(x_0) = \frac{-3 \cdot f(x_0) + 4 \cdot f(x_0+h) - f(x_0+2h)}{2 \cdot h} + \underbrace{\frac{2h^2}{3!} f'''(x_0)}_{\mathcal{O}(h^2)}
+\end{equation}

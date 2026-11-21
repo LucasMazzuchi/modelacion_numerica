@@ -28,6 +28,7 @@ Como generalmente no se conoce 'a', se trabaja con cotas de errores.
 
 $\Delta\ a$: Cota de error absoluto. $|\epsilon_a|\le\Delta\ a$
 
+${a\tilde{~}}$ es la aproximación, como en los métodos iterativos(Ej: Newton-Raphson).
 
 $\frac{\Delta\ a}{a\tilde{~}}$ Cota de error relativo. $|\epsilon_r|\le \frac{\Delta\ a}{a\tilde{~}}$
 
@@ -42,5 +43,10 @@ Un criterio:
     \item Los dígitos que están a la derecha se desechan, pues no tiene sentido mantener la exactitud sobre dígitos de los que no estoy seguro que sean así.
     \item Se redondea de forma simétrica al más próximo.
 \end{itemize}
-El error relativo es la suma de los errores de las variables.
+\subsection{Datos Varios}
+Notar que esto es para errores inherentes, vienen desde el enunciado.
+El error absoluto total es la suma de los valores absolutos de las derivadas parciales de la función multiplicadas por el error de cada variable.
 Los errores se propagan al realizar operaciones.
+En una suma o resta de dos o más variables, los errores absolutos se suman.(Si es una resta, también suma el error abs.)
+En un producto o división de dos o más variables, los errores relativos se suman(Si es división, también suma el error rel.).
+Para potencias, se multiplica por el valor absoluto del exponente al error rel.

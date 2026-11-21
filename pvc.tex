@@ -1,0 +1,46 @@
+\section{Problemas de Valor de Contorno (PVC)}
+Se da una ecuación diferencial, con las variables definidas en un dominio. Este representa
+en sus bordes la frontera. De acá, se hacen $n+1$ nodos que dividen $n$ intervalos, los cuales
+tienen todos la misma longitud, están equiespaciados. Esta longitud es \textbf{h}
+\subsection{Fórmula genérica}
+    $$\text{nodo } N-1: \quad \frac{U_N - 2U_{N-1} + U_{N-2}}{h^2} + U_{N-1} = 0$$
+\subsection{Matriz tridiagonal}
+Al aplicar diferencias finitas a la ecuación diferencial, obtenemos un sistema de ecuaciones evaluado en cada nodo interior:
+
+\begin{align*}
+    \text{nodo 1:} \quad & \frac{U_2 - 2U_1 + U_0}{h^2} + U_1 = 0 \\
+    \text{nodo 2:} \quad & \frac{U_3 - 2U_2 + U_1}{h^2} + U_2 = 0 \\
+    \vdots \quad & \\
+    \text{nodo } N-1: \quad & \frac{U_N - 2U_{N-1} + U_{N-2}}{h^2} + U_{N-1} = 0
+\end{align*}
+
+\textit{Nota: $U_0$ y $U_N$ son datos (condiciones de contorno).}
+
+\subsection{Sistema Matricial}
+Agrupando términos, el sistema se puede expresar en forma matricial $A \cdot U = B$, resultando en una matriz tridiagonal:
+
+\begin{equation}
+\begin{bmatrix}
+    -\frac{2}{h^2} + 1 & \frac{1}{h^2} & 0 & \dots & 0 \\[1em]
+    \frac{1}{h^2} & -\frac{2}{h^2} + 1 & \frac{1}{h^2} & 0 \dots & 0 \\[1em]
+    0 & \frac{1}{h^2} & -\frac{2}{h^2} + 1 & \frac{1}{h^2} \dots & 0 \\[1em]
+    0 & 0 & \ddots & \ddots & \ddots
+\end{bmatrix}
+\begin{bmatrix}
+    U_1 \\
+    U_2 \\
+    \vdots \\
+    \vdots \\
+    U_{N-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+    -U_0 / h^2 \\
+    0 \\
+    0 \\
+    0 \\
+    -U_N / h^2
+\end{bmatrix}
+\end{equation}
+
+Como la matriz de coeficientes es tridiagonal, el sistema tiene altas chances de poder resolverse mediante métodos iterativos como Jacobi o Gauss-Seidel.
